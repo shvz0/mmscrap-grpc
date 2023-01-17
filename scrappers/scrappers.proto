@@ -1,0 +1,13 @@
+syntax = "proto3";
+option go_package = "github.com/shvz0/mmscrap-grpc/scrappers";
+
+service Scrappers{
+    rpc GetTodays24NewsArticles (Empty) returns (stream Article){}
+}
+
+message Article{
+    string author = 1;
+    string text = 2;
+}
+
+message Empty{}
